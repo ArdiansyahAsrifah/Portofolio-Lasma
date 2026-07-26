@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lasma Stefani | Social Media Specialist & Brand Strategist</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#071534',
+        blue: { DEFAULT:'#1130ff', deep:'#0a1f8f', mid:'#1a3bff' },
+        lime: { DEFAULT:'#d4ff3f', deep:'#a8d100' },
+        ice:  '#eef2ff'
+      },
+      fontFamily: {
+        display: ['Anton','sans-serif'],
+        body: ['Space Grotesk','sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  * { font-family:'Space Grotesk',sans-serif; }
+  h1,h2,h3,.display{ font-family:'Anton',sans-serif; letter-spacing:0.01em; }
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:#071534}
+  ::-webkit-scrollbar-thumb{background:#d4ff3f;border-radius:10px}
+
+  body{ background:#0a1440; }
+
+  .noise{
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  .glass{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    backdrop-filter: blur(18px);
+  }
+  .card{
+    background:#ffffff;
+    border-radius: 28px;
+    border:2px solid #0a1440;
+    box-shadow: 6px 6px 0 #0a1440;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform: translate(-3px,-3px); box-shadow: 10px 10px 0 #d4ff3f; }
+  .card-dark{
+    background:#0a1440;
+    border-radius:28px;
+    border:2px solid #d4ff3f;
+    color:#fff;
+    box-shadow: 6px 6px 0 #d4ff3f;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .card-dark:hover{ transform: translate(-3px,-3px); box-shadow: 10px 10px 0 #ffffff; }
+  .lime-btn{
+    background:#d4ff3f; color:#0a1440; font-weight:700;
+    border:2px solid #0a1440; box-shadow:4px 4px 0 #0a1440;
+    transition: all .18s ease;
+  }
+  .lime-btn:hover{ transform: translate(-2px,-2px); box-shadow:6px 6px 0 #0a1440; }
+  .outline-btn{
+    background:transparent; color:#fff; border:2px solid #fff;
+    transition: all .18s ease;
+  }
+  .outline-btn:hover{ background:#fff; color:#0a1440; }
+  .tag{
+    border:1.5px solid #0a1440; border-radius:999px; font-weight:600;
+  }
+  .section-title{
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 0.95;
+  }
+  .stroke-text{
+    -webkit-text-stroke: 1.5px #0a1440;
+    color: transparent;
+  }
+  .marquee-track{
+    display:flex; width:200%; animation: marquee 22s linear infinite;
+  }
+  @keyframes marquee{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .progress-track{ background:rgba(255,255,255,0.15); }
+  .progress-fill{ background:#d4ff3f; }
+
+  #pdf-loading-overlay{
+    position:fixed; inset:0; z-index:70; display:none;
+    align-items:center; justify-content:center;
+    background:rgba(7,21,52,0.92); backdrop-filter: blur(6px);
+  }
+
+  .pdf-page-land{
+    width:1122px; height:793px; box-sizing:border-box;
+    background:#ffffff; color:#0a1440;
+    font-family:'Space Grotesk',sans-serif;
+    padding:36px 46px;
+    position:relative;
+  }
+  #pdf-resume-root{
+    position:fixed; left:-99999px; top:0; z-index:-1;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;     
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;          
+  }
+    .scrollbar-hide {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;    
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;             
+  }
+</style>
+</head>
+<body class="text-white antialiased overflow-x-hidden selection:bg-lime selection:text-ink">
+
+<header class="fixed top-0 left-0 right-0 z-40">
+  <div class="glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+
+        <div>
+          <span class="font-display text-lg leading-none block tracking-wide">LASMA STEFANI</span>
+          <span class="text-[10px] font-bold text-lime tracking-[0.2em] uppercase block mt-1">Social Media Specialist</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-1 text-xs font-bold uppercase tracking-wider">
+        <a href="#about" class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-lime transition-all">About</a>
+        <a href="#shift" class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-lime transition-all">Career Journey</a>
+        <a href="#skills" class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-lime transition-all">Skills</a>
+        <a href="#projects" class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-lime transition-all">Case Studies</a>
+        <a href="#achievements" class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-lime transition-all">Impact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button onclick="openPdfConfirm()" class="hidden sm:inline-flex items-center gap-2 lime-btn px-4 py-2.5 rounded-full text-xs uppercase tracking-wider">
+          <i class="fa-solid fa-file-pdf"></i> Download PDF
+        </button>
+        <a href="#contact" class="hidden lg:inline-flex items-center gap-2 outline-btn px-4 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider">
+          <i class="fa-solid fa-paper-plane"></i> Hire Me
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full border-2 border-white/30">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-ink border-t border-white/10 px-6 py-6 space-y-3 shadow-xl">
+    <a href="#about" class="block font-bold py-1">About Lasma</a>
+    <a href="#shift" class="block font-bold py-1">Procurement &rarr; Social Media</a>
+    <a href="#skills" class="block font-bold py-1">Skills & Tools</a>
+    <a href="#projects" class="block font-bold py-1">Case Studies</a>
+    <a href="#achievements" class="block font-bold py-1">Key Achievements</a>
+    <a href="#contact" class="block font-bold py-1">Contact Me</a>
+    <button onclick="openPdfConfirm()" class="w-full flex items-center justify-center gap-2 lime-btn py-3 rounded-full font-bold text-xs uppercase tracking-wider">
+      <i class="fa-solid fa-file-pdf"></i> Download Portfolio PDF
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="relative pt-32 sm:pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto noise">
+  <div class="absolute -top-10 -right-24 w-96 h-96 bg-blue-mid/40 rounded-full blur-3xl"></div>
+  <div class="absolute top-40 -left-24 w-72 h-72 bg-lime/20 rounded-full blur-3xl"></div>
+
+  <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+      <div class="inline-flex w-fit items-center gap-2 px-4 py-2 rounded-full bg-lime text-ink text-xs font-extrabold uppercase tracking-wider border-2 border-ink shadow-[3px_3px_0_#0a1440]">
+        <i class="fa-solid fa-arrows-rotate text-xs"></i> Career Switcher
+      </div>
+      <h1 class="section-title text-white">
+        HELLO, I'M<br>
+        <span class="text-lime">LASMA STEFANI</span> 
+      </h1>
+      <p class="text-xl sm:text-2xl font-bold text-white/90">Social Media Specialist & Brand Strategist</p>
+      <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-xl">
+        Helping brands grow through social media strategy, engaging content, and data-driven digital marketing blending analytical precision with creative storytelling.
+      </p>
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a href="#projects" class="inline-flex items-center gap-2.5 lime-btn px-6 py-3.5 rounded-full text-xs uppercase tracking-wider">
+          <i class="fa-solid fa-folder-open"></i> View Case Studies
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 text-white/80 hover:text-lime font-bold px-2 py-3.5 text-xs uppercase tracking-wider">
+          <i class="fa-solid fa-paper-plane"></i> Contact
+        </a>
+      </div>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="lg:col-span-5">
+      <div class="card p-5 space-y-4 relative">
+        <div class="flex items-center justify-between">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lime text-ink text-[11px] font-extrabold uppercase tracking-wider border border-ink">
+            <span class="w-2 h-2 rounded-full bg-ink animate-pulse"></span> Open for Hire
+          </span>
+          <span class="text-xs font-mono font-bold text-ink/60">JAKARTA, ID</span>
+        </div>
+        <div class="relative aspect-square rounded-2xl overflow-hidden border-2 border-ink">
+          <img src="stefani.png"
+               alt="Lasma Stefani"
+               class="w-full h-full object-cover object-top" />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent"></div>
+          <div class="absolute bottom-3 left-4 right-4">
+            <p class="font-display text-lg text-white leading-none">LASMA STEFANI</p>
+            <p class="text-xs text-lime font-bold mt-1">Social Media Specialist</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="p-2.5 bg-ink/5 rounded-xl border border-ink/20 flex items-center justify-between text-ink">
+            <span class="font-medium"><i class="fa-solid fa-graduation-cap text-blue mr-1.5"></i> Degree</span>
+            <span class="font-extrabold">S1 Accounting (Universitas Kristen Indonesia)</span>
+          </div>
+          <div class="p-2.5 bg-ink/5 rounded-xl border border-ink/20 flex items-center justify-between text-ink">
+            <span class="font-medium"><i class="fa-solid fa-certificate text-blue mr-1.5"></i> Certification</span>
+            <span class="font-extrabold">Social Media Specialist Bootcamp (Tempat Belajar)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metric strip -->
+    <div class="lg:col-span-4">
+      <div class="card p-6 h-full flex items-center gap-4 text-ink">
+        <div class="w-14 h-14 rounded-2xl bg-blue text-white flex items-center justify-center text-2xl shrink-0 border-2 border-ink">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div>
+          <div class="text-3xl font-display">100+</div>
+          <p class="text-xs font-extrabold uppercase tracking-wider mt-0.5">Organic Followers</p>
+          <p class="text-[11px] text-ink/50 mt-1">1 Month Organic Strategy</p>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-4">
+      <div class="card-dark p-6 h-full flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-lime text-ink flex items-center justify-center text-2xl shrink-0 border-2 border-lime">
+          <i class="fa-solid fa-sack-dollar"></i>
+        </div>
+        <div>
+          <div class="text-3xl font-display text-lime">12M IDR</div>
+          <p class="text-xs font-extrabold uppercase tracking-wider mt-0.5">Sales Impact</p>
+          <p class="text-[11px] text-white/50 mt-1">F&B Real Client Account</p>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-4">
+      <div class="card p-6 h-full flex items-center gap-4 text-ink">
+        <div class="w-14 h-14 rounded-2xl bg-blue text-white flex items-center justify-center text-2xl shrink-0 border-2 border-ink">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div>
+          <div class="text-3xl font-display">2x</div>
+          <p class="text-xs font-extrabold uppercase tracking-wider mt-0.5">Best Group Award</p>
+          <p class="text-[11px] text-ink/50 mt-1">Tempat Belajar Bootcamp</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE DIVIDER -->
+<div class="bg-lime text-ink py-3 overflow-hidden border-y-2 border-ink">
+  <div class="marquee-track font-display text-sm sm:text-base whitespace-nowrap">
+    <span class="px-6">STRATEGY &bull; CONTENT &bull; ANALYTICS &bull; STORYTELLING &bull; GROWTH &bull; </span>
+    <span class="px-6">STRATEGY &bull; CONTENT &bull; ANALYTICS &bull; STORYTELLING &bull; GROWTH &bull; </span>
+    <span class="px-6">STRATEGY &bull; CONTENT &bull; ANALYTICS &bull; STORYTELLING &bull; GROWTH &bull; </span>
+    <span class="px-6">STRATEGY &bull; CONTENT &bull; ANALYTICS &bull; STORYTELLING &bull; GROWTH &bull; </span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 px-4 sm:px-6 lg:px-8 bg-ice">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue text-white text-xs font-extrabold uppercase tracking-wider">
+        <i class="fa-solid fa-user-gear"></i> About Lasma
+      </span>
+      <h2 class="section-title text-ink mt-4">COMBINING LOGIC & CREATIVITY</h2>
+      <p class="text-ink/60 text-sm sm:text-base mt-3">Bringing operational experience from Procurement into measurable social media campaigns.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="card p-7 relative text-ink">
+          <i class="fa-solid fa-quote-left text-4xl text-blue/20 absolute top-5 right-6"></i>
+          <p class="text-base sm:text-lg font-medium leading-relaxed relative z-10">
+            "After several years working in Procurement, I discovered my passion for digital marketing and content strategy. I transitioned into Social Media Management to combine analytical thinking with creativity, helping brands build meaningful connections through engaging content."
+          </p>
+        </div>
+        <p class="text-ink/70 text-sm leading-relaxed">
+          A background in <strong class="text-ink">Accounting (S1 UKI)</strong> and professional experience in <strong class="text-ink">Procurement</strong> gives an edge over the average social media manager: measured budget allocation, disciplined calendar execution, vendor & creator negotiation, and data-driven performance reporting.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="card p-4 text-ink">
+            <span class="text-xs font-extrabold text-blue uppercase tracking-wider block"><i class="fa-solid fa-bullseye mr-1"></i> Mission</span>
+            <p class="text-xs text-ink/70 leading-snug mt-1">Turning business narratives into digital experiences that drive genuine customer action.</p>
+          </div>
+          <div class="card p-4 text-ink">
+            <span class="text-xs font-extrabold text-blue uppercase tracking-wider block"><i class="fa-solid fa-shield-halved mr-1"></i> Values</span>
+            <p class="text-xs text-ink/70 leading-snug mt-1">Data-informed creativity, operational consistency, transparent reporting, adaptability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 space-y-4">
+        <div class="card-dark p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-white/15 pb-3">
+            <h3 class="font-display text-lg tracking-wide"><i class="fa-solid fa-graduation-cap text-lime mr-2"></i> EDUCATION</h3>
+            <span class="text-xs font-mono text-white/50">2011–2015</span>
+          </div>
+          <div>
+            <p class="text-base font-bold text-white">Bachelor's Degree in Accounting (S.Ak)</p>
+            <p class="text-xs text-lime mt-0.5">Universitas Kristen Indonesia (UKI)</p>
+            <p class="text-xs text-white/50 mt-2">Built analytical foundations, financial budgeting, numerical precision & strategic problem-solving.</p>
+          </div>
+        </div>
+        <div class="card-dark p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-white/15 pb-3">
+            <h3 class="font-display text-lg tracking-wide"><i class="fa-solid fa-certificate text-lime mr-2"></i> CERTIFICATION</h3>
+            <span class="text-xs font-mono text-lime font-bold">April 2026</span>
+          </div>
+          <div>
+            <p class="text-base font-bold text-white">Social Media Specialist Certification</p>
+            <p class="text-xs text-lime mt-0.5">Tempat Belajar Bootcamp (4 Months Intensive)</p>
+            <p class="text-xs text-white/50 mt-2">Social strategy, copywriting, audience targeting, Meta Business Suite, TikTok planning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHIFT -->
+<section id="shift" class="py-24 px-4 sm:px-6 lg:px-8 bg-ink noise">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime text-ink text-xs font-extrabold uppercase tracking-wider">
+        <i class="fa-solid fa-timeline"></i> Transition Formula
+      </span>
+      <h2 class="section-title text-white mt-4">FROM PROCUREMENT TO SOCIAL MEDIA</h2>
+      <p class="text-white/60 text-sm sm:text-base mt-3">Every procurement discipline has a direct counterpart in digital growth.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <div class="card p-6 space-y-3 text-ink">
+        <div class="w-11 h-11 rounded-xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-calculator"></i></div>
+        <span class="text-xs font-extrabold text-blue uppercase tracking-wider block">Financial Accounting</span>
+        <h3 class="font-display text-lg">PROCUREMENT SKILL</h3>
+        <p class="text-xs text-ink/60">Numerical analysis, budget tracking, cost optimization.</p>
+        <div class="pt-3 border-t-2 border-dashed border-ink/15">
+          <span class="text-xs font-extrabold text-ink uppercase tracking-wider block">&rarr; Social Media Impact</span>
+          <p class="text-xs text-ink/80 font-semibold mt-1">Data-driven campaign budgeting, ROI analysis & performance metrics.</p>
+        </div>
+      </div>
+      <div class="card p-6 space-y-3 text-ink">
+        <div class="w-11 h-11 rounded-xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-handshake"></i></div>
+        <span class="text-xs font-extrabold text-blue uppercase tracking-wider block">Vendor Negotiation</span>
+        <h3 class="font-display text-lg">PROCUREMENT SKILL</h3>
+        <p class="text-xs text-ink/60">Supplier relations, contracts, timeline control.</p>
+        <div class="pt-3 border-t-2 border-dashed border-ink/15">
+          <span class="text-xs font-extrabold text-ink uppercase tracking-wider block">&rarr; Social Media Impact</span>
+          <p class="text-xs text-ink/80 font-semibold mt-1">KOL/influencer management, partner negotiation, campaign logistics.</p>
+        </div>
+      </div>
+      <div class="card p-6 space-y-3 text-ink">
+        <div class="w-11 h-11 rounded-xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-list-check"></i></div>
+        <span class="text-xs font-extrabold text-blue uppercase tracking-wider block">Process Logistics</span>
+        <h3 class="font-display text-lg">PROCUREMENT SKILL</h3>
+        <p class="text-xs text-ink/60">Cross-division coordination, milestone precision.</p>
+        <div class="pt-3 border-t-2 border-dashed border-ink/15">
+          <span class="text-xs font-extrabold text-ink uppercase tracking-wider block">&rarr; Social Media Impact</span>
+          <p class="text-xs text-ink/80 font-semibold mt-1">Tight content calendar scheduling, close collaboration with the design team.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="max-w-4xl mx-auto card-dark p-8">
+      <h3 class="font-display text-2xl text-center mb-8 tracking-wide"><i class="fa-solid fa-route text-lime mr-2"></i>CAREER MILESTONE</h3>
+      <div class="space-y-6 relative before:absolute before:inset-0 before:left-3.5 before:h-full before:w-0.5 before:bg-white/15">
+        <div class="relative flex items-start gap-4">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-lime text-ink shrink-0 border-2 border-lime z-10"><i class="fa-solid fa-graduation-cap text-xs"></i></div>
+          <div class="flex-1 bg-white/5 p-4 rounded-2xl border border-white/10">
+            <span class="text-[11px] font-mono font-bold text-lime">2011 – 2015</span>
+            <h4 class="font-display text-sm tracking-wide">BACHELOR'S DEGREE IN ACCOUNTING</h4>
+            <p class="text-xs text-white/50 mt-1">Universitas Kristen Indonesia (UKI) — numerical precision & problem-solving.</p>
+          </div>
+        </div>
+        <div class="relative flex items-start gap-4">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue text-white shrink-0 border-2 border-blue z-10"><i class="fa-solid fa-briefcase text-xs"></i></div>
+          <div class="flex-1 bg-white/5 p-4 rounded-2xl border border-white/10">
+            <span class="text-[11px] font-mono font-bold text-blue-300">Professional Career</span>
+            <h4 class="font-display text-sm tracking-wide">PROCUREMENT SPECIALIST</h4>
+            <p class="text-xs text-white/50 mt-1">Corporate & Supply Chain Operations — vendor negotiation & project logistics.</p>
+          </div>
+        </div>
+        <div class="relative flex items-start gap-4">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-lime text-ink shrink-0 border-2 border-lime z-10"><i class="fa-solid fa-laptop-code text-xs"></i></div>
+          <div class="flex-1 bg-white/5 p-4 rounded-2xl border border-white/10">
+            <span class="text-[11px] font-mono font-bold text-lime">2026 (4 Months)</span>
+            <h4 class="font-display text-sm tracking-wide">SOCIAL MEDIA SPECIALIST BOOTCAMP</h4>
+            <p class="text-xs text-white/50 mt-1">Tempat Belajar — social strategy, copy, Meta insights, TikTok analytics.</p>
+          </div>
+        </div>
+        <div class="relative flex items-start gap-4">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue text-white shrink-0 border-2 border-blue z-10"><i class="fa-solid fa-chart-line text-xs"></i></div>
+          <div class="flex-1 bg-white/5 p-4 rounded-2xl border border-white/10">
+            <span class="text-[11px] font-mono font-bold text-blue-300">Real Client Execution</span>
+            <h4 class="font-display text-sm tracking-wide">HANDLED MSME CLIENT ACCOUNTS</h4>
+            <p class="text-xs text-white/70 font-semibold mt-1">@dimzly.mentai (F&B) & @namakuboni (Pet Content)</p>
+          </div>
+        </div>
+        <div class="relative flex items-start gap-4">
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-lime text-ink shrink-0 border-2 border-lime shadow-[0_0_0_4px_rgba(212,255,63,0.25)] z-10"><i class="fa-solid fa-flag text-xs"></i></div>
+          <div class="flex-1 bg-lime/10 p-4 rounded-2xl border border-lime/40">
+            <span class="text-[11px] font-mono font-bold text-lime">Present</span>
+            <h4 class="font-display text-sm tracking-wide">OPEN TO SOCIAL MEDIA ROLES</h4>
+            <p class="text-xs text-white/70 mt-1">Ready to contribute directly to agencies, brands, or corporate teams.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 bg-ice">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue text-white text-xs font-extrabold uppercase tracking-wider">
+        <i class="fa-solid fa-sliders"></i> Skills Toolkit
+      </span>
+      <h2 class="section-title text-ink mt-4">CAPABILITIES & SOFTWARE STACK</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card p-8 space-y-6 text-ink">
+        <div class="w-12 h-12 rounded-2xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-hashtag text-xl"></i></div>
+        <div>
+          <h3 class="font-display text-2xl">SOCIAL MEDIA</h3>
+          <p class="text-xs text-ink/50 mt-1">End-to-end management & creative production</p>
+        </div>
+        <div class="space-y-2.5 text-xs font-bold">
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-chess text-blue"></i> Social Media Strategy</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-calendar-check text-blue"></i> Content Planning & Calendars</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-pen-nib text-blue"></i> Copywriting & Storytelling</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-comments text-blue"></i> Community Management</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-wand-magic-sparkles text-blue"></i> Content Optimization</div>
+        </div>
+      </div>
+
+      <div class="card p-8 space-y-6 text-ink">
+        <div class="w-12 h-12 rounded-2xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-chart-pie text-xl"></i></div>
+        <div>
+          <h3 class="font-display text-2xl">MARKETING & ANALYTICS</h3>
+          <p class="text-xs text-ink/50 mt-1">Research, planning & growth measurement</p>
+        </div>
+        <div class="space-y-2.5 text-xs font-bold">
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-magnifying-glass-chart text-blue"></i> Audience Research</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-crosshairs text-blue"></i> Competitor Analysis</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-bullhorn text-blue"></i> Campaign Planning</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-sliders text-blue"></i> Performance Analysis</div>
+          <div class="p-3 bg-ink/5 rounded-xl border border-ink/15 flex items-center gap-3"><i class="fa-solid fa-chart-column text-blue"></i> Analytics Reporting</div>
+        </div>
+      </div>
+
+      <div class="card-dark p-8 space-y-6">
+        <div class="w-12 h-12 rounded-2xl bg-lime text-ink flex items-center justify-center border-2 border-lime"><i class="fa-solid fa-screwdriver-wrench text-xl"></i></div>
+        <div>
+          <h3 class="font-display text-2xl">TOOLS & PLATFORMS</h3>
+          <p class="text-xs text-white/50 mt-1">Software competency levels</p>
+        </div>
+        <div class="space-y-4 text-xs font-medium">
+          <div class="space-y-1">
+            <div class="flex justify-between"><span class="text-white font-bold"><i class="fa-solid fa-palette text-lime mr-1.5"></i> Canva</span><span class="text-lime font-mono">90%</span></div>
+            <div class="h-2 progress-track rounded-full overflow-hidden"><div class="h-full progress-fill rounded-full w-[90%]"></div></div>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between"><span class="text-white font-bold"><i class="fa-solid fa-video text-lime mr-1.5"></i> CapCut</span><span class="text-lime font-mono">85%</span></div>
+            <div class="h-2 progress-track rounded-full overflow-hidden"><div class="h-full progress-fill rounded-full w-[85%]"></div></div>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between"><span class="text-white font-bold"><i class="fa-brands fa-meta text-lime mr-1.5"></i> Meta Suite</span><span class="text-lime font-mono">88%</span></div>
+            <div class="h-2 progress-track rounded-full overflow-hidden"><div class="h-full progress-fill rounded-full w-[88%]"></div></div>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between"><span class="text-white font-bold"><i class="fa-brands fa-instagram text-lime mr-1.5"></i> Instagram Insights</span><span class="text-lime font-mono">92%</span></div>
+            <div class="h-2 progress-track rounded-full overflow-hidden"><div class="h-full progress-fill rounded-full w-[92%]"></div></div>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between"><span class="text-white font-bold"><i class="fa-brands fa-tiktok text-lime mr-1.5"></i> TikTok Analytics</span><span class="text-lime font-mono">85%</span></div>
+            <div class="h-2 progress-track rounded-full overflow-hidden"><div class="h-full progress-fill rounded-full w-[85%]"></div></div>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between"><span class="text-white font-bold"><i class="fa-solid fa-note-sticky text-lime mr-1.5"></i> Notion</span><span class="text-lime font-mono">90%</span></div>
+            <div class="h-2 progress-track rounded-full overflow-hidden"><div class="h-full progress-fill rounded-full w-[90%]"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 bg-ink noise">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime text-ink text-xs font-extrabold uppercase tracking-wider">
+        <i class="fa-solid fa-folder-open"></i> Portfolio Showcase
+      </span>
+      <h2 class="section-title text-white mt-4">FEATURED CLIENT CASE STUDIES</h2>
+      <p class="text-white/60 text-sm sm:text-base mt-3">Click "View Case Study" to see the objectives, deliverables, content strategy, and campaign results.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- PROJECT 01 -->
+      <div class="card overflow-hidden flex flex-col justify-between text-ink">
+        <div>
+          <div class="p-8 bg-blue text-white flex items-center justify-between border-b-2 border-ink">
+            <div>
+              <span class="text-[11px] font-bold px-3 py-1 rounded-md bg-lime text-ink uppercase tracking-wider">PROJECT 01 // F&B</span>
+              <h3 class="font-display text-3xl mt-3 tracking-wide">DIMZLY MENTAI</h3>
+              <p class="text-xs font-mono mt-1 text-white/70"><i class="fa-brands fa-instagram mr-1"></i>@dimzly.mentai</p>
+            </div>
+            <div class="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center text-white shrink-0 border border-white/30">
+              <i class="fa-solid fa-utensils text-2xl"></i>
+            </div>
+          </div>
+          <div class="p-8 space-y-6">
+            <div class="grid grid-cols-2 gap-4 text-xs">
+              <div class="p-3 bg-ink/5 rounded-2xl border border-ink/15">
+                <span class="text-ink/50 block font-medium">Duration</span><span class="font-bold text-sm">1 Month</span>
+              </div>
+              <div class="p-3 bg-ink/5 rounded-2xl border border-ink/15">
+                <span class="text-ink/50 block font-medium">Role</span><span class="font-bold text-sm">Social Media Specialist</span>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-extrabold text-ink/50 uppercase tracking-wider block">Deliverables</span>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Audience Research</span>
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Content Calendar</span>
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Copywriting</span>
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Reels Direction</span>
+              </div>
+            </div>
+            <div class="p-4 bg-lime/20 border-2 border-ink rounded-2xl space-y-1">
+              <span class="text-xs font-extrabold text-ink flex items-center gap-2"><i class="fa-solid fa-chart-line"></i> Campaign High Result</span>
+              <p class="text-xs text-ink/80 font-medium leading-snug">Generated IDR 12M in sales & attracted singer Iis Dahlia for an organic store visit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-8 pt-0">
+          <button onclick="openModal('dimzly-modal')" class="w-full lime-btn py-4 px-4 rounded-2xl flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-eye"></i> View Case Study
+          </button>
+        </div>
+      </div>
+
+      <!-- PROJECT 02 -->
+      <div class="card overflow-hidden flex flex-col justify-between text-ink">
+        <div>
+          <div class="p-8 bg-ink text-white flex items-center justify-between border-b-2 border-lime">
+            <div>
+              <span class="text-[11px] font-bold px-3 py-1 rounded-md bg-lime text-ink uppercase tracking-wider">PROJECT 02 // PET CONTENT</span>
+              <h3 class="font-display text-3xl mt-3 tracking-wide">NAMAKU BONI</h3>
+              <p class="text-xs font-mono mt-1 text-white/70"><i class="fa-brands fa-instagram mr-1"></i>@namakuboni</p>
+            </div>
+            <div class="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center text-white shrink-0 border border-white/30">
+              <i class="fa-solid fa-paw text-2xl"></i>
+            </div>
+          </div>
+          <div class="p-8 space-y-6">
+            <div class="grid grid-cols-2 gap-4 text-xs">
+              <div class="p-3 bg-ink/5 rounded-2xl border border-ink/15">
+                <span class="text-ink/50 block font-medium">Duration</span><span class="font-bold text-sm">1 Month</span>
+              </div>
+              <div class="p-3 bg-ink/5 rounded-2xl border border-ink/15">
+                <span class="text-ink/50 block font-medium">Role</span><span class="font-bold text-sm">Social Media Specialist</span>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-extrabold text-ink/50 uppercase tracking-wider block">Deliverables</span>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Niche Targeting</span>
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Reels Scriptwriting</span>
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Engagement Boost</span>
+                <span class="px-3 py-1 tag bg-ink/5 font-medium">Visual Grid Design</span>
+              </div>
+            </div>
+            <div class="p-4 bg-blue/10 border-2 border-blue rounded-2xl space-y-1">
+              <span class="text-xs font-extrabold text-blue flex items-center gap-2"><i class="fa-solid fa-chart-line"></i> Campaign High Result</span>
+              <p class="text-xs text-ink/80 font-medium leading-snug">Organic interaction grew +140% & built an active pet-owner community.</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-8 pt-0">
+          <button onclick="openModal('boni-modal')" class="w-full lime-btn py-4 px-4 rounded-2xl flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-eye"></i> View Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM COLLAB -->
+<section class="py-24 px-4 sm:px-6 lg:px-8 bg-ice">
+  <div class="max-w-7xl mx-auto">
+    <div class="card-dark p-8 sm:p-12 space-y-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/15 pb-6">
+        <div>
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime text-ink text-xs font-extrabold uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-users"></i> Bootcamp Squad Execution
+          </span>
+          <h2 class="font-display text-3xl tracking-wide">CROSS-FUNCTIONAL TEAM COLLABORATION</h2>
+        </div>
+        <span class="px-4 py-2 rounded-xl bg-white/10 text-lime text-xs font-mono font-bold border border-white/20">Tempat Belajar Bootcamp</span>
+      </div>
+      <p class="text-white/70 text-sm sm:text-base leading-relaxed max-w-4xl">
+        Worked on a real F&B MSME client together with cross-functional Digital Marketing and Graphic Design teams during an intensive Social Media Specialist bootcamp.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-3">
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Designed and executed a full one-month social media strategy.</span></div>
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Conducted in-depth target audience research and competitor analysis.</span></div>
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Built monthly content calendars aligned with MSME goals.</span></div>
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Wrote persuasive copywriting & creative campaign concepts.</span></div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Managed Instagram and TikTok content scheduling & workflow.</span></div>
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Collaborated with visual designers for brand consistency.</span></div>
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Monitored daily engagement & audience feedback.</span></div>
+          <div class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-lime mt-1 text-sm"></i><span class="text-xs sm:text-sm text-white/80">Provided data-backed optimization recommendations.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="py-24 px-4 sm:px-6 lg:px-8 bg-ink noise">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime text-ink text-xs font-extrabold uppercase tracking-wider">
+        <i class="fa-solid fa-trophy"></i> Recognition
+      </span>
+      <h2 class="section-title text-white mt-4">KEY ACHIEVEMENTS & AWARDS</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      <div class="card p-6 space-y-4 text-ink">
+        <div class="w-12 h-12 rounded-2xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-chart-line"></i></div>
+        <div><span class="text-xs font-extrabold text-ink/50 uppercase tracking-wider block">Organic Growth</span>
+        <p class="text-2xl font-display mt-1">100+ FOLLOWERS</p>
+        <p class="text-xs text-ink/60 mt-2">In 1 month, without paid ads.</p></div>
+      </div>
+      <div class="card p-6 space-y-4 text-ink">
+        <div class="w-12 h-12 rounded-2xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-sack-dollar"></i></div>
+        <div><span class="text-xs font-extrabold text-ink/50 uppercase tracking-wider block">Sales Impact</span>
+        <p class="text-2xl font-display mt-1">IDR 12 MILLION</p>
+        <p class="text-xs text-ink/60 mt-2">Generated directly from social media activity.</p></div>
+      </div>
+      <div class="card p-6 space-y-4 text-ink">
+        <div class="w-12 h-12 rounded-2xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-star"></i></div>
+        <div><span class="text-xs font-extrabold text-ink/50 uppercase tracking-wider block">Organic Exposure</span>
+        <p class="text-lg font-display mt-1">IIS DAHLIA VISIT</p>
+        <p class="text-xs text-ink/60 mt-2">Content reach attracted singer Iis Dahlia for a store visit.</p></div>
+      </div>
+      <div class="card p-6 space-y-4 text-ink">
+        <div class="w-12 h-12 rounded-2xl bg-blue text-white flex items-center justify-center border-2 border-ink"><i class="fa-solid fa-award"></i></div>
+        <div><span class="text-xs font-extrabold text-ink/50 uppercase tracking-wider block">Bootcamp Awards</span>
+        <p class="text-lg font-display mt-1">2x BEST GROUP</p>
+        <p class="text-xs text-ink/60 mt-2">Best Overall Group & Best Specialist Group.</p></div>
+      </div>
+    </div>
+
+    <div class="max-w-2xl mb-10">
+      <h3 class="font-display text-3xl text-white tracking-wide">WHY WORK WITH LASMA?</h3>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-brain text-blue text-xl"></i><p class="font-extrabold text-xs">Strategic Thinking</p><p class="text-[11px] text-ink/50">Aligned with business goals.</p></div>
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-lightbulb text-blue text-xl"></i><p class="font-extrabold text-xs">Creative Problem Solving</p><p class="text-[11px] text-ink/50">Turning constraints into campaigns.</p></div>
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-chart-simple text-blue text-xl"></i><p class="font-extrabold text-xs">Data-Driven Decisions</p><p class="text-[11px] text-ink/50">Insight-based optimization.</p></div>
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-comments text-blue text-xl"></i><p class="font-extrabold text-xs">Strong Communication</p><p class="text-[11px] text-ink/50">Transparent reporting.</p></div>
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-users text-blue text-xl"></i><p class="font-extrabold text-xs">Collaborative Player</p><p class="text-[11px] text-ink/50">Comfortable working with design teams.</p></div>
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-bolt text-blue text-xl"></i><p class="font-extrabold text-xs">Fast Learner</p><p class="text-[11px] text-ink/50">Adaptive to new algorithms.</p></div>
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-magnifying-glass text-blue text-xl"></i><p class="font-extrabold text-xs">Detail-Oriented</p><p class="text-[11px] text-ink/50">Precision from Procurement.</p></div>
+      <div class="card p-5 text-ink text-center space-y-2"><i class="fa-solid fa-sliders text-blue text-xl"></i><p class="font-extrabold text-xs">Adaptable & Flexible</p><p class="text-[11px] text-ink/50">Proven through this career shift.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA PDF -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-lime text-ink relative overflow-hidden">
+  <div class="max-w-5xl mx-auto text-center space-y-6 relative z-10">
+    <div class="w-16 h-16 rounded-3xl bg-ink text-lime flex items-center justify-center text-3xl mx-auto border-2 border-ink shadow-[4px_4px_0_#0a1440]">
+      <i class="fa-solid fa-file-pdf"></i>
+    </div>
+    <h2 class="section-title">DOWNLOAD PORTFOLIO PDF</h2>
+    <p class="text-ink/70 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+      Download the complete PDF portfolio: profile, experience, certifications, skills matrix, project case studies, and key achievements.
+    </p>
+    <button onclick="openPdfConfirm()" class="inline-flex items-center gap-3 bg-ink text-white font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-wider border-2 border-ink shadow-[4px_4px_0_#0a1440] hover:shadow-[6px_6px_0_#0a1440] hover:-translate-y-0.5 transition-all">
+      <i class="fa-solid fa-circle-down text-lg"></i> Download Portfolio PDF
+    </button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 bg-ice">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mb-14">
+      <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue text-white text-xs font-extrabold uppercase tracking-wider">
+        <i class="fa-solid fa-envelope"></i> Contact Channel
+      </span>
+      <h2 class="section-title text-ink mt-4">LET'S COLLABORATE & GROW YOUR BRAND</h2>
+      <p class="text-ink/60 text-sm sm:text-base mt-3">Open to full-time roles, agency work, and MSME consulting.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 max-w-5xl">
+      <div class="lg:col-span-5 space-y-3">
+        <a href="mailto:lasma.stefani@email.com" class="card p-4 flex items-center gap-4 text-ink">
+          <div class="w-12 h-12 rounded-xl bg-blue text-white flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-at"></i></div>
+          <div><span class="text-[11px] font-extrabold text-ink/50 uppercase tracking-wider block">Email</span><span class="text-xs font-bold">lasma.stefani@email.com</span></div>
+        </a>
+        <a href="https://wa.me/6285717252117" target="_blank" class="card p-4 flex items-center gap-4 text-ink">
+          <div class="w-12 h-12 rounded-xl bg-ink text-lime flex items-center justify-center text-lg shrink-0"><i class="fa-brands fa-whatsapp"></i></div>
+          <div><span class="text-[11px] font-extrabold text-ink/50 uppercase tracking-wider block">WhatsApp</span><span class="text-xs font-bold">+62 857-1725-2117</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/lasmastefani/" target="_blank" class="card p-4 flex items-center gap-4 text-ink">
+          <div class="w-12 h-12 rounded-xl bg-blue text-white flex items-center justify-center text-lg shrink-0"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div><span class="text-[11px] font-extrabold text-ink/50 uppercase tracking-wider block">LinkedIn</span><span class="text-xs font-bold">Lasma Stefani</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 bg-ink text-white/50 text-xs border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-lime"></span><span>Lasma Stefani &copy; 2026. All rights reserved.</span></div>
+    <a href="#top" class="hover:text-lime transition-colors">Back to Top <i class="fa-solid fa-arrow-up text-xs ml-1"></i></a>
+  </div>
+</footer>
+
+
+<!-- MODAL 1: DIMZLY MENTAI -->
+<div id="dimzly-modal" class="fixed inset-0 z-50 hidden bg-ink/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto scrollbar-hide">
+  <div class="bg-white border-2 border-ink rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto scrollbar-hide p-6 sm:p-8 space-y-6 relative text-ink shadow-[8px_8px_0_#d4ff3f]">
+    <button onclick="closeModal('dimzly-modal')" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-ink text-lime flex items-center justify-center"><i class="fa-solid fa-xmark text-lg"></i></button>
+
+    <!-- Header -->
+    <div class="border-b-2 border-ink/10 pb-4">
+      <span class="text-xs font-extrabold text-blue uppercase tracking-wider">Case Study Breakdown</span>
+      <h2 class="font-display text-2xl mt-1">DIMZLY MENTAI (@dimzly.mentai)</h2>
+      <p class="text-xs text-ink/50 mt-1"><i class="fa-solid fa-utensils text-blue mr-1"></i> F&B Industry | Role: Social Media Specialist | Duration: 1 Month (13 Feb - 5 Mar 2026)</p>
+    </div>
+
+    <!-- Overview & Objectives -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue">Overview & Objectives</h3>
+      <p class="text-xs text-ink/70 leading-relaxed">Dimzly Mentai is an MSME serving Japanese-style mentai dishes. The objective: turn a raw brand asset into a high-converting Instagram destination.</p>
+      <div class="grid grid-cols-2 gap-2 text-xs font-medium">
+        <div class="p-2.5 tag bg-ink/5 flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue"></i> Increase Awareness</div>
+        <div class="p-2.5 tag bg-ink/5 flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue"></i> Boost Engagement</div>
+        <div class="p-2.5 tag bg-ink/5 flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue"></i> Consistent Branding</div>
+        <div class="p-2.5 tag bg-ink/5 flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue"></i> Drive Direct Sales</div>
+      </div>
+    </div>
+
+    <!-- Instagram Performance -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue"><i class="fa-brands fa-instagram mr-1"></i>Instagram Performance (Week 1 → Week 3)</h3>
+      <div class="grid grid-cols-3 gap-2 text-xs">
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Followers</span>
+          <strong>117 → 164</strong>
+          <span class="block text-blue font-bold">+40,2%</span>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Account Reached (W3)</span>
+          <strong>48.035</strong>
+          <span class="block text-ink/50">2.291 organic</span>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Impressions / Views (W3)</span>
+          <strong>50.794</strong>
+          <span class="block text-ink/50">7.184 organic</span>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Engagement (W3)</span>
+          <strong>190</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Content Interactions (W3)</span>
+          <strong>228</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Profile Visit (W3)</span>
+          <strong>420</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- TikTok Performance -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue"><i class="fa-brands fa-tiktok mr-1"></i>TikTok Performance (25 Feb - 3 Mar 2026)</h3>
+      <div class="grid grid-cols-3 gap-2 text-xs">
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Followers</span>
+          <strong>165 → 229</strong>
+          <span class="block text-blue font-bold">+38,8%</span>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Post Views</span>
+          <strong>10.728</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Reached Audience</span>
+          <strong>9.412</strong>
+          <span class="block text-blue font-bold">+22,1%</span>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Engagement</span>
+          <strong>335</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Engagement Rate</span>
+          <strong>3,55%</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Profile Views</span>
+          <strong>143</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Digital Marketing / Meta Ads -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue"><i class="fa-solid fa-bullhorn mr-1"></i>Digital Marketing - Meta Ads</h3>
+      <p class="text-xs text-ink/70 leading-relaxed">5 campaigns run across Traffic, Awareness & Reach objectives, targeting foodies within a 5km radius of Lebak Bulus, Jakarta Selatan.</p>
+      <div class="grid grid-cols-2 gap-2 text-xs font-medium">
+        <div class="p-2.5 tag bg-ink/5">Ads 1: Rp74.511 — Profile Visit</div>
+        <div class="p-2.5 tag bg-ink/5">Ads 2 & 3: Rp293.583 — Traffic & Awareness</div>
+        <div class="p-2.5 tag bg-ink/5">Ads 4 & 5: Rp267.043 — Reach & Link Clicks</div>
+        <div class="p-2.5 tag bg-ink/5">Total Budget: <strong>Rp635.137</strong></div>
+      </div>
+    </div>
+
+    <!-- Content Production -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue"><i class="fa-solid fa-photo-film mr-1"></i>Content Production Summary</h3>
+      <div class="grid grid-cols-3 gap-2 text-xs">
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Week 1</span>
+          <strong>3 Single + 3 Carousel</strong>
+          <span class="block text-ink/50">6 Reels · 23 Stories</span>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Week 2</span>
+          <strong>5 Single + 2 Carousel</strong>
+          <span class="block text-ink/50">7 Reels · 16 Stories</span>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Week 3</span>
+          <strong>3 Single + 3 Carousel</strong>
+          <span class="block text-ink/50">7 Reels · 14 Stories</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Results Achieved -->
+    <div class="p-4 bg-lime/20 border-2 border-ink rounded-2xl space-y-2">
+      <h3 class="text-xs font-medium text-blue">Key Results Achieved</h3>
+      <div class="grid grid-cols-2 gap-2 text-xs">
+        <div><span class="text-ink/50 block">Organic Followers</span><strong>+100 Gained</strong></div>
+        <div><span class="text-ink/50 block">Sales Generated</span><strong class="text-blue">IDR 12 Million</strong></div>
+        <div><span class="text-ink/50 block">Revenue During Handling</span><strong class="text-blue">IDR 8.288.000</strong></div>
+        <div><span class="text-ink/50 block">ROAS</span><strong class="text-blue">13.04x</strong></div>
+        <div class="col-span-2"><span class="text-ink/50 block">Celebrity Visit</span><strong>Iis Dahlia</strong></div>
+      </div>
+    </div>
+
+    <!-- Canva Weekly Report Link -->
+    <a href="https://canva.link/3uhcgvzfp7o9uts" target="_blank" rel="noopener noreferrer"
+       class="flex items-center justify-center gap-2 bg-blue text-white font-bold py-3 px-6 rounded-xl text-xs hover:opacity-90 transition">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+       Full Weekly Report (Canva)
+    </a>
+
+    <div class="text-right">
+      <button onclick="closeModal('dimzly-modal')" class="bg-ink text-lime font-bold py-2.5 px-6 rounded-xl text-xs">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2: NAMAKU BONI -->
+<div id="boni-modal" class="fixed inset-0 z-50 hidden bg-ink/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto scrollbar-hide">
+  <div class="bg-white border-2 border-ink rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto scrollbar-hide p-6 sm:p-8 space-y-6 relative text-ink shadow-[8px_8px_0_#1130ff]">
+    <button onclick="closeModal('boni-modal')" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-ink text-lime flex items-center justify-center"><i class="fa-solid fa-xmark text-lg"></i></button>
+
+    <!-- Header -->
+    <div class="border-b-2 border-ink/10 pb-4">
+      <span class="text-xs font-extrabold text-blue uppercase tracking-wider">Case Study Breakdown</span>
+      <h2 class="font-display text-2xl mt-1">NAMAKU BONI (@namakuboni)</h2>
+      <p class="text-xs text-ink/50 mt-1"><i class="fa-solid fa-paw text-blue mr-1"></i> Pet Content | Role: Social Media Specialist | Duration: 1 Month</p>
+    </div>
+
+    <!-- Overview & Strategy -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue">Overview & Strategy</h3>
+      <p class="text-xs text-ink/70 leading-relaxed">Namaku Boni is a pet content platform targeting pet parents through relatable video humor, storytelling, and care tips.</p>
+      <div class="p-3 tag bg-ink/5 text-xs"><strong>Key Execution:</strong> Reels scripting with voiceover, educational carousels, and active story interaction.</div>
+    </div>
+
+    <!-- Instagram Insight Overview -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue"><i class="fa-brands fa-instagram mr-1"></i>Instagram Insights Overview (May 21 - Jul 24)</h3>
+      <div class="grid grid-cols-3 gap-2 text-xs">
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Views</span>
+          <strong>5.950.155</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Net Followers</span>
+          <strong class="text-blue">+1.800</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Interactions</span>
+          <strong>439.562</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Accounts Reached</span>
+          <strong>2.870.062</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Profile Visits</span>
+          <strong>46.600</strong>
+        </div>
+        <div class="p-2.5 tag bg-ink/5">
+          <span class="text-ink/50 block">Viewer Mix</span>
+          <strong>0,2% Followers</strong>
+          <span class="block text-ink/50">99,8% Non-followers</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Views & Interactions by Content Type -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue">Views & Interactions by Content Type</h3>
+      <div class="grid grid-cols-2 gap-2 text-xs font-medium">
+        <div class="p-2.5 tag bg-ink/5 flex justify-between"><span>Reels — Views</span><strong>5.9M</strong></div>
+        <div class="p-2.5 tag bg-ink/5 flex justify-between"><span>Reels — Interactions</span><strong>440K</strong></div>
+        <div class="p-2.5 tag bg-ink/5 flex justify-between"><span>Stories — Views</span><strong>2.8K</strong></div>
+        <div class="p-2.5 tag bg-ink/5 flex justify-between"><span>Stories — Interactions</span><strong>38</strong></div>
+        <div class="p-2.5 tag bg-ink/5 flex justify-between"><span>Posts — Views</span><strong>821</strong></div>
+        <div class="p-2.5 tag bg-ink/5 flex justify-between"><span>Posts — Interactions</span><strong>10</strong></div>
+        <div class="p-2.5 tag bg-ink/5 flex justify-between"><span>Live Videos</span><strong>0</strong></div>
+      </div>
+    </div>
+
+    <!-- Top Content by Views -->
+    <div class="space-y-3">
+      <h3 class="text-xs font-medium text-blue">Top Content by Views</h3>
+      <div class="grid grid-cols-4 gap-2 text-xs text-center font-medium">
+        <div class="p-2.5 tag bg-ink/5">740K</div>
+        <div class="p-2.5 tag bg-ink/5">629K</div>
+        <div class="p-2.5 tag bg-ink/5">610K</div>
+        <div class="p-2.5 tag bg-ink/5">80K</div>
+      </div>
+    </div>
+
+    <!-- Impact -->
+    <div class="p-4 bg-blue/10 border-2 border-blue rounded-2xl">
+      <span class="text-xs font-extrabold text-blue uppercase tracking-wider block mb-1">Impact</span>
+      <p class="text-xs text-ink/80">Organic interaction grew by more than 140% & built an active community.</p>
+    </div>
+
+    <div class="text-right">
+      <button onclick="closeModal('boni-modal')" class="bg-ink text-lime font-bold py-2.5 px-6 rounded-xl text-xs">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- PDF CONFIRM DIALOG -->
+<div id="pdf-confirm-modal" class="fixed inset-0 z-[60] hidden bg-ink/90 backdrop-blur-md flex items-center justify-center p-4">
+  <div class="bg-white border-2 border-ink rounded-3xl max-w-md w-full p-7 space-y-5 relative text-ink shadow-[8px_8px_0_#d4ff3f]">
+    <button onclick="closePdfConfirm()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-ink text-lime flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+    <div class="w-14 h-14 rounded-2xl bg-lime text-ink flex items-center justify-center text-2xl border-2 border-ink"><i class="fa-solid fa-file-pdf"></i></div>
+    <div>
+      <h3 class="font-display text-xl tracking-wide">DOWNLOAD PORTFOLIO PDF</h3>
+      <p class="text-xs text-ink/60 mt-2 leading-relaxed">A landscape, resume-style PDF summary will be generated — profile, education, skills, case studies, and achievements. This takes a few seconds.</p>
+    </div>
+    <div class="flex items-center justify-end gap-3 pt-2">
+      <button onclick="closePdfConfirm()" class="px-5 py-3 rounded-full font-bold text-xs uppercase tracking-wider border-2 border-ink text-ink hover:bg-ink/5 transition-all">Cancel</button>
+      <button id="pdf-confirm-btn" onclick="confirmDownloadPDF()" class="inline-flex items-center gap-2 lime-btn px-6 py-3 rounded-full text-xs uppercase tracking-wider">
+        <i class="fa-solid fa-circle-down"></i> Download PDF
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- LOADING OVERLAY -->
+<div id="pdf-loading-overlay">
+  <div class="text-center space-y-4">
+    <div class="w-14 h-14 mx-auto rounded-2xl bg-lime text-ink flex items-center justify-center text-2xl border-2 border-lime">
+      <i class="fa-solid fa-spinner fa-spin"></i>
+    </div>
+    <p id="pdf-loading-text" class="font-display text-lg text-white tracking-wide">PREPARING PDF...</p>
+  </div>
+</div>
+
+
+<div id="pdf-resume-root" aria-hidden="true">
+
+  <!-- PAGE 1: Profile + Education + Timeline -->
+  <div class="pdf-page-land" id="pdf-page-1">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid #1130ff; padding-bottom:12px; margin-bottom:18px;">
+      <div>
+        <h1 style="font-family:'Anton',sans-serif; font-size:30pt; margin:0; color:#0a1440;">LASMA STEFANI</h1>
+        <p style="font-size:12pt; color:#1130ff; font-weight:700; margin:4px 0 0 0;">Social Media Specialist &amp; Brand Strategist</p>
+      </div>
+      <div style="text-align:right; font-size:9pt; color:#475569; line-height:1.4;">
+        <p style="margin:0; font-weight:700;">Jakarta, Indonesia</p>
+        <p style="margin:0;">Procurement &rarr; Social Media Specialist</p>
+        <p style="margin:0; font-weight:600; color:#1130ff;">Official Portfolio Document (2026)</p>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:24px;">
+      <div style="flex:1.15;">
+        <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:14px 18px; border-radius:10px; margin-bottom:14px;">
+          <h3 style="font-size:10pt; font-weight:300; color:#0a1440; margin:0 0 6px 0; text-transform:uppercase;">Executive Profile</h3>
+          <p style="font-size:9.5pt; color:#334155; line-height:1.5; margin:0;">
+            After building several years of experience in Procurement, I discovered my passion for digital marketing and content strategy. I transitioned into Social Media Management to combine analytical thinking with creativity, helping brands build meaningful online connections through engaging, strategically planned content.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-bottom:14px;">
+          <div style="flex:1; border:1px solid #e2e8f0; padding:10px 12px; border-radius:8px; background:#ffffff;">
+            <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:3px; text-transform:uppercase;">Personal Mission</strong>
+            <p style="font-size:8.5pt; color:#475569; margin:0; line-height:1.4;">Elevate business narratives into engaging digital experiences that drive genuine customer action.</p>
+          </div>
+          <div style="flex:1; border:1px solid #e2e8f0; padding:10px 12px; border-radius:8px; background:#ffffff;">
+            <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:3px; text-transform:uppercase;">Professional Values</strong>
+            <p style="font-size:8.5pt; color:#475569; margin:0; line-height:1.4;">Data-informed creativity, operational consistency, transparent reporting, continuous adaptation.</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:10.5pt; font-weight:300; color:#0a1440; border-bottom:1px solid #cbd5e1; padding-bottom:4px; margin-bottom:10px; text-transform:uppercase;">Career Transition Timeline</h3>
+        <div style="font-size:9pt; color:#334155; line-height:1.55;">
+          <div style="margin-bottom:6px; padding-left:10px; border-left:3px solid #0a1440;"><strong style="color:#0a1440;">2011–2015: Bachelor's Degree in Accounting (UKI)</strong><div style="color:#64748b; font-size:8.5pt;">Developed numerical precision and analytical problem-solving skills.</div></div>
+          <div style="margin-bottom:6px; padding-left:10px; border-left:3px solid #1130ff;"><strong style="color:#0a1440;">Professional Career: Procurement Specialist</strong><div style="color:#64748b; font-size:8.5pt;">Managed vendor negotiations, supplier relations, logistics, and strict project timelines.</div></div>
+          <div style="margin-bottom:6px; padding-left:10px; border-left:3px solid #0a1440;"><strong style="color:#0a1440;">2026: Social Media Specialist Bootcamp (Tempat Belajar)</strong><div style="color:#64748b; font-size:8.5pt;">Completed 4-month intensive training on social strategy, copy, Meta suite, and TikTok analytics.</div></div>
+          <div style="margin-bottom:6px; padding-left:10px; border-left:3px solid #1130ff;"><strong style="color:#0a1440;">Real Client Execution: Handled MSME Brand Accounts</strong><div style="color:#64748b; font-size:8.5pt;">Executed campaigns for @dimzly.mentai (F&amp;B) and @namakuboni (Pet Content).</div></div>
+          <div style="padding-left:10px; border-left:3px solid #0a1440;"><strong style="color:#0a1440;">Present: Open to Social Media Specialist Roles</strong><div style="color:#64748b; font-size:8.5pt;">Ready to drive brand engagement and sales conversions for agency or corporate roles.</div></div>
+        </div>
+      </div>
+
+      <div style="flex:0.85; display:flex; flex-direction:column; gap:14px;">
+        <div style="border:1px solid #cbd5e1; padding:14px; border-radius:10px; background:#ffffff;">
+          <h4 style="font-size:9.5pt; font-weight:800; color:#0a1440; margin:0 0 4px 0; text-transform:uppercase;">Education</h4>
+          <p style="font-size:9.5pt; font-weight:700; margin:0; color:#0a1440;">Bachelor's Degree in Accounting (S.Ak)</p>
+          <p style="font-size:8.5pt; color:#64748b; margin:2px 0 0 0;">Universitas Kristen Indonesia (UKI) | 2011–2015</p>
+          <p style="font-size:8pt; color:#475569; margin:5px 0 0 0;">Built analytical foundations, numerical accuracy, and financial budgeting skills.</p>
+        </div>
+        <div style="border:1px solid #cbd5e1; padding:14px; border-radius:10px; background:#ffffff;">
+          <h4 style="font-size:9.5pt; font-weight:800; color:#0a1440; margin:0 0 4px 0; text-transform:uppercase;">Certification</h4>
+          <p style="font-size:9.5pt; font-weight:700; margin:0; color:#0a1440;">Social Media Specialist</p>
+          <p style="font-size:8.5pt; color:#059669; font-weight:700; margin:2px 0 0 0;">Tempat Belajar Bootcamp | April 2026</p>
+          <p style="font-size:8pt; color:#475569; margin:5px 0 0 0;">4 months intensive training in strategy, copywriting, Meta suite, and real client execution.</p>
+        </div>
+        <div style="border:1px solid #cbd5e1; padding:14px; border-radius:10px; background:#0a1440; color:#fff; flex:1;">
+          <h4 style="font-size:9.5pt; font-weight:800; color:#d4ff3f; margin:0 0 8px 0; text-transform:uppercase;">Snapshot Metrics</h4>
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:8px;">
+            <span style="font-size:8.5pt; color:rgba(255,255,255,0.7);">Organic Followers</span>
+            <strong style="font-size:9.5pt; color:#d4ff3f;">100+</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:8px;">
+            <span style="font-size:8.5pt; color:rgba(255,255,255,0.7);">Sales Impact</span>
+            <strong style="font-size:9.5pt; color:#d4ff3f;">IDR 12M</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between;">
+            <span style="font-size:8.5pt; color:rgba(255,255,255,0.7);">Bootcamp Awards</span>
+            <strong style="font-size:9.5pt; color:#d4ff3f;">2x Best Group</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Skills Matrix + Background -->
+  <div class="pdf-page-land" id="pdf-page-2">
+    <h2 style="font-size:18pt; font-weight:500; color:#0a1440; border-bottom:3px solid #1130ff; padding-bottom:6px; margin:0 0 16px 0; font-family:'Anton',sans-serif;">SKILLS MATRIX &amp; TOOLKIT</h2>
+    <div style="display:flex; gap:14px; margin-bottom:18px;">
+      <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:12px 14px; border-radius:8px;">
+        <strong style="color:#0a1440; display:block; margin-bottom:6px; font-size:10pt; border-bottom:1px solid #e2e8f0; padding-bottom:5px;">Social Media</strong>
+        <ul style="margin:0; padding-left:14px; color:#334155; font-size:8.8pt; line-height:1.7;">
+          <li>Social Media Strategy</li><li>Content Planning &amp; Calendars</li><li>Copywriting &amp; Storytelling</li><li>Community Management</li><li>Content Optimization</li><li>Reels Video Scriptwriting</li>
+        </ul>
+      </div>
+      <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:12px 14px; border-radius:8px;">
+        <strong style="color:#0a1440; display:block; margin-bottom:6px; font-size:10pt; border-bottom:1px solid #e2e8f0; padding-bottom:5px;">Marketing &amp; Strategy</strong>
+        <ul style="margin:0; padding-left:14px; color:#334155; font-size:8.8pt; line-height:1.7;">
+          <li>Audience Research &amp; Profiling</li><li>Competitor Analysis</li><li>Campaign Planning</li><li>Performance Analysis</li><li>Analytics Reporting</li><li>Funnel Strategy</li>
+        </ul>
+      </div>
+      <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:12px 14px; border-radius:8px;">
+        <strong style="color:#0a1440; display:block; margin-bottom:6px; font-size:10pt; border-bottom:1px solid #e2e8f0; padding-bottom:5px;">Tools &amp; Software</strong>
+        <ul style="margin:0; padding-left:14px; color:#334155; font-size:8.8pt; line-height:1.7;">
+          <li>Canva &amp; CapCut</li><li>Meta Business Suite</li><li>Instagram Insights</li><li>TikTok Analytics</li><li>Notion Content Boards</li><li>Google Workspace</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:14px;">
+      <div style="flex:1; border:1px solid #cbd5e1; padding:14px 16px; border-radius:8px; background:#ffffff;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <h3 style="font-size:11pt; font-weight:300; margin:0; color:#0a1440;">Procurement Transferable Background</h3>
+          <span style="font-size:7.5pt; font-weight:700; background:#f1f5f9; color:#334155; padding:3px 8px; border-radius:5px; border:1px solid #cbd5e1;">CAREER FOUNDATION</span>
+        </div>
+        <p style="font-size:8.8pt; color:#334155; line-height:1.45; margin-bottom:8px;">Brought structured operational discipline, quantitative accounting analysis, cross-functional vendor negotiation, and strict timeline adherence into social media campaign execution.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:5px;">
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Communication</span>
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Vendor Negotiation</span>
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Project Logistics</span>
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Strategic Planning</span>
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Analytical Thinking</span>
+        </div>
+      </div>
+      <div style="flex:1; border:1px solid #cbd5e1; padding:14px 16px; border-radius:8px; background:#ffffff;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <h3 style="font-size:11pt; font-weight:300; margin:0; color:#0a1440;">Tempat Belajar Bootcamp</h3>
+          <span style="font-size:7.5pt; font-weight:700; background:#ecfdf5; color:#065f46; padding:3px 8px; border-radius:5px; border:1px solid #a7f3d0;">4 MONTHS INTENSIVE</span>
+        </div>
+        <p style="font-size:8.8pt; color:#334155; line-height:1.45; margin-bottom:8px;">Completed intensive practical training focusing on end-to-end social media strategy, digital marketing principles, cross-functional team collaboration, and real-world MSME client campaigns.</p>
+        <ul style="margin:0; padding-left:14px; font-size:8.5pt; color:#334155; line-height:1.55;">
+          <li>Executed a full 1-month campaign strategy for live client accounts.</li>
+          <li>Collaborated with Digital Marketing and Graphic Design squads.</li>
+          <li>Tracked daily performance and delivered data-backed optimization recommendations.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Case Study 01 — Dimzly Mentai (full detail, matches website modal) -->
+  <div class="pdf-page-land" id="pdf-page-3">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:3px solid #1130ff; padding-bottom:10px; margin-bottom:14px;">
+      <div>
+        <span style="font-size:7.5pt; font-weight:700; background:#eef2ff; color:#1130ff; padding:2px 6px; border-radius:4px; border:1px solid #c7d2fe;">CASE STUDY 01 // F&amp;B INDUSTRY</span>
+        <h2 style="font-size:17pt; font-weight:500; margin:5px 0 0 0; color:#0a1440; font-family:'Anton',sans-serif;">DIMZLY MENTAI (@dimzly.mentai)</h2>
+        <p style="font-size:8.5pt; color:#64748b; margin:2px 0 0 0;">Role: Social Media Specialist | Duration: 1 Month (13 Feb – 5 Mar 2026)</p>
+      </div>
+      <div style="text-align:right; font-size:8pt; font-weight:700; color:#059669; background:#ecfdf5; border:1px solid #a7f3d0; padding:6px 10px; border-radius:6px;">IDR 12M Sales · ROAS 13.04x</div>
+    </div>
+
+    <div style="display:flex; gap:16px;">
+      <div style="flex:1;">
+        <p style="font-size:8.5pt; color:#334155; line-height:1.4; margin:0 0 8px 0;"><strong>Overview:</strong> Dimzly Mentai is an MSME serving Japanese-style mentai dishes. The objective was to turn a raw brand asset into a high-converting Instagram destination.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px;">
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Increase Awareness</span>
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Boost Engagement</span>
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Consistent Branding</span>
+          <span style="font-size:7.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:3px 7px; border-radius:5px; color:#334155;">Drive Direct Sales</span>
+        </div>
+
+        <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:5px;">Digital Marketing – Meta Ads</strong>
+        <p style="font-size:8pt; color:#334155; line-height:1.4; margin:0 0 6px 0;">5 campaigns across Traffic, Awareness &amp; Reach objectives, targeting foodies within a 5km radius of Lebak Bulus, Jakarta Selatan.</p>
+        <div style="font-size:7.8pt; color:#334155; line-height:1.75; margin-bottom:10px;">
+          <div>• Ads 1: Rp74.511 — Profile Visit</div>
+          <div>• Ads 2 &amp; 3: Rp293.583 — Traffic &amp; Awareness</div>
+          <div>• Ads 4 &amp; 5: Rp267.043 — Reach &amp; Link Clicks</div>
+          <div>• <strong>Total Budget: Rp635.137</strong></div>
+        </div>
+
+        <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:5px;">Content Production Summary</strong>
+        <div style="display:flex; gap:6px;">
+          <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><strong style="display:block; color:#0a1440;">Week 1</strong>3 Single + 3 Carousel<br>6 Reels · 23 Stories</div>
+          <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><strong style="display:block; color:#0a1440;">Week 2</strong>5 Single + 2 Carousel<br>7 Reels · 16 Stories</div>
+          <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><strong style="display:block; color:#0a1440;">Week 3</strong>3 Single + 3 Carousel<br>7 Reels · 14 Stories</div>
+        </div>
+      </div>
+
+      <div style="flex:1;">
+        <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:5px;">Instagram Performance (Week 1 → Week 3)</strong>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:12px;">
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Followers</span><strong style="color:#0a1440;">117 → 164</strong><span style="display:block; color:#1130ff; font-weight:700;">+40,2%</span></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Reached (W3)</span><strong style="color:#0a1440;">48.035</strong><span style="display:block; color:#64748b;">2.291 organic</span></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Impressions (W3)</span><strong style="color:#0a1440;">50.794</strong><span style="display:block; color:#64748b;">7.184 organic</span></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Engagement (W3)</span><strong style="color:#0a1440;">190</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Interactions (W3)</span><strong style="color:#0a1440;">228</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Profile Visit (W3)</span><strong style="color:#0a1440;">420</strong></div>
+        </div>
+
+        <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:5px;">TikTok Performance (25 Feb – 3 Mar 2026)</strong>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:12px;">
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Followers</span><strong style="color:#0a1440;">165 → 229</strong><span style="display:block; color:#1130ff; font-weight:700;">+38,8%</span></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Post Views</span><strong style="color:#0a1440;">10.728</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Reached</span><strong style="color:#0a1440;">9.412</strong><span style="display:block; color:#1130ff; font-weight:700;">+22,1%</span></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Engagement</span><strong style="color:#0a1440;">335</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Engagement Rate</span><strong style="color:#0a1440;">3,55%</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Profile Views</span><strong style="color:#0a1440;">143</strong></div>
+        </div>
+
+        <div style="background:#ecfdf5; border:1px solid #a7f3d0; padding:10px 12px; border-radius:8px;">
+          <strong style="font-size:8.5pt; color:#065f46; display:block; margin-bottom:5px;">Key Results Achieved</strong>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 10px; font-size:8pt; color:#065f46;">
+            <span>Organic Followers: <strong>+100</strong></span>
+            <span>Sales Generated: <strong>IDR 12M</strong></span>
+            <span>Revenue During Handling: <strong>IDR 8.288.000</strong></span>
+            <span>ROAS: <strong>13.04x</strong></span>
+            <span style="grid-column:1 / span 2;">Celebrity Visit: <strong>Iis Dahlia</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: Case Study 02 — Namaku Boni (full detail, matches website modal) -->
+  <div class="pdf-page-land" id="pdf-page-4">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:3px solid #1130ff; padding-bottom:10px; margin-bottom:14px;">
+      <div>
+        <span style="font-size:7.5pt; font-weight:700; background:#eef2ff; color:#1130ff; padding:2px 6px; border-radius:4px; border:1px solid #c7d2fe;">CASE STUDY 02 // PET CONTENT</span>
+        <h2 style="font-size:17pt; font-weight:500; margin:5px 0 0 0; color:#0a1440; font-family:'Anton',sans-serif;">NAMAKU BONI (@namakuboni)</h2>
+        <p style="font-size:8.5pt; color:#64748b; margin:2px 0 0 0;">Role: Social Media Specialist | Duration: 1 Month</p>
+      </div>
+      <div style="text-align:right; font-size:8pt; font-weight:700; color:#1130ff; background:#eef2ff; border:1px solid #c7d2fe; padding:6px 10px; border-radius:6px;">+140% Engagement · +1.800 Followers</div>
+    </div>
+
+    <div style="display:flex; gap:16px;">
+      <div style="flex:1;">
+        <p style="font-size:8.5pt; color:#334155; line-height:1.4; margin:0 0 8px 0;"><strong>Overview:</strong> Namaku Boni is a pet content platform targeting pet parents through relatable video humor, storytelling, and care tips.</p>
+        <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:8px 10px; border-radius:6px; font-size:8pt; color:#334155; margin-bottom:12px;"><strong style="color:#0a1440;">Key Execution:</strong> Reels scripting with voiceover, educational carousels, and active story interaction.</div>
+
+        <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:5px;">Views &amp; Interactions by Content Type</strong>
+        <div style="font-size:7.8pt; color:#334155; line-height:1.9;">
+          <div style="display:flex; justify-content:space-between; border-bottom:1px dashed #e2e8f0; padding:2px 0;"><span>Reels — Views</span><strong>5.9M</strong></div>
+          <div style="display:flex; justify-content:space-between; border-bottom:1px dashed #e2e8f0; padding:2px 0;"><span>Reels — Interactions</span><strong>440K</strong></div>
+          <div style="display:flex; justify-content:space-between; border-bottom:1px dashed #e2e8f0; padding:2px 0;"><span>Stories — Views / Interactions</span><strong>2.8K / 38</strong></div>
+          <div style="display:flex; justify-content:space-between; border-bottom:1px dashed #e2e8f0; padding:2px 0;"><span>Posts — Views / Interactions</span><strong>821 / 10</strong></div>
+          <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>Live Videos</span><strong>0</strong></div>
+        </div>
+
+        <strong style="font-size:9pt; color:#0a1440; display:block; margin:12px 0 5px 0;">Top Content by Views</strong>
+        <div style="display:flex; gap:6px;">
+          <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:6px; border-radius:6px; font-size:8pt; text-align:center; font-weight:700; color:#0a1440;">740K</div>
+          <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:6px; border-radius:6px; font-size:8pt; text-align:center; font-weight:700; color:#0a1440;">629K</div>
+          <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:6px; border-radius:6px; font-size:8pt; text-align:center; font-weight:700; color:#0a1440;">610K</div>
+          <div style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; padding:6px; border-radius:6px; font-size:8pt; text-align:center; font-weight:700; color:#0a1440;">80K</div>
+        </div>
+      </div>
+
+      <div style="flex:1;">
+        <strong style="font-size:9pt; color:#0a1440; display:block; margin-bottom:5px;">Instagram Insights Overview (May 21 – Jul 24)</strong>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:14px;">
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Views</span><strong style="color:#0a1440;">5.950.155</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Net Followers</span><strong style="color:#1130ff;">+1.800</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Interactions</span><strong style="color:#0a1440;">439.562</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Accounts Reached</span><strong style="color:#0a1440;">2.870.062</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Profile Visits</span><strong style="color:#0a1440;">46.600</strong></div>
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 8px; border-radius:6px; font-size:7.5pt; color:#334155;"><span style="color:#64748b; display:block;">Viewer Mix</span><strong style="color:#0a1440;">0,2% Followers</strong><span style="display:block; color:#64748b;">99,8% Non-followers</span></div>
+        </div>
+
+        <div style="background:#eef2ff; border:1px solid #c7d2fe; padding:10px 12px; border-radius:8px;">
+          <strong style="font-size:8.5pt; color:#1e3a8a; display:block; margin-bottom:4px;">Impact</strong>
+          <p style="font-size:8pt; color:#1e3a8a; line-height:1.45; margin:0;">Organic interaction grew by more than 140% and built an active, engaged pet-owner community — 99,8% of viewers were non-followers, showing strong reach beyond the existing audience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: Achievements + Contact -->
+  <div class="pdf-page-land" id="pdf-page-5">
+    <h2 style="font-size:18pt; font-weight:900; color:#0a1440; border-bottom:3px solid #1130ff; padding-bottom:6px; margin:0 0 16px 0; font-family:'Anton',sans-serif;">KEY ACHIEVEMENTS &amp; RECOGNITION</h2>
+    <div style="display:flex; gap:10px; margin-bottom:18px;">
+      <div style="flex:1; border:1px solid #cbd5e1; padding:10px 12px; border-radius:8px; background:#ffffff;"><strong style="font-size:9.5pt; color:#0a1440; display:block;">100+ Organic Followers</strong><span style="font-size:8pt; color:#64748b;">Achieved within 1 month without paid advertising.</span></div>
+      <div style="flex:1; border:1px solid #cbd5e1; padding:10px 12px; border-radius:8px; background:#ffffff;"><strong style="font-size:9.5pt; color:#059669; display:block;">IDR 12 Million Revenue</strong><span style="font-size:8pt; color:#64748b;">Direct sales generated via organic social activities.</span></div>
+      <div style="flex:1; border:1px solid #cbd5e1; padding:10px 12px; border-radius:8px; background:#ffffff;"><strong style="font-size:9.5pt; color:#0a1440; display:block;">Best Group Award</strong><span style="font-size:8pt; color:#64748b;">Awarded for Real Client Project performance at Tempat Belajar.</span></div>
+      <div style="flex:1; border:1px solid #cbd5e1; padding:10px 12px; border-radius:8px; background:#ffffff;"><strong style="font-size:9.5pt; color:#0a1440; display:block;">Best Specialist Group</strong><span style="font-size:8pt; color:#64748b;">Recognized for top social media strategy &amp; execution.</span></div>
+    </div>
+
+    <h3 style="font-size:12pt; font-weight:800; color:#0a1440; border-bottom:1px solid #cbd5e1; padding-bottom:5px; margin-bottom:10px; text-transform:uppercase;">Why Work With Me — Core Strengths</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px;">
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Strategic Thinking</span>
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Creative Problem Solving</span>
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Data-Driven Decision Making</span>
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Strong Communication</span>
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Collaborative Team Player</span>
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Fast Learner</span>
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Detail-Oriented</span>
+      <span style="font-size:8.5pt; background:#f8fafc; border:1px solid #cbd5e1; padding:4px 9px; border-radius:5px; color:#0a1440;">Adaptable &amp; Flexible</span>
+    </div>
+
+    <div style="border:1px solid #cbd5e1; background:#0a1440; padding:18px 22px; border-radius:10px; color:#fff;">
+      <div style="font-size:14pt; font-weight:800; color:#d4ff3f; margin-bottom:4px; font-family:'Anton',sans-serif;">LET'S COLLABORATE &amp; GROW YOUR BRAND</div>
+      <p style="font-size:9pt; color:rgba(255,255,255,0.7); margin:0 0 12px 0;">Open to full-time roles, agency opportunities, and MSME social media management.</p>
+      <div style="font-size:9pt; color:#fff; display:flex; gap:40px; font-weight:700;">
+        <span><i style="color:#d4ff3f;">Email:</i> lasma.stefani@email.com</span>
+        <span><i style="color:#d4ff3f;">WhatsApp:</i> +62 812-3456-7890</span>
+        <span><i style="color:#d4ff3f;">LinkedIn:</i> Lasma Stefani</span>
+        <span><i style="color:#d4ff3f;">Instagram:</i> @lasmastefani</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+function openModal(modalId) {
+  document.getElementById(modalId).classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const toast = document.getElementById('toast-message');
+  toast.classList.remove('hidden');
+  event.target.reset();
+  setTimeout(() => toast.classList.add('hidden'), 5000);
+}
+
+function openPdfConfirm() {
+  document.getElementById('pdf-confirm-modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closePdfConfirm() {
+  document.getElementById('pdf-confirm-modal').classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
+
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+  setTimeout(() => window.scrollTo(0, 0), 50);
+});
+
+const PDF_PAGE_IDS = ['pdf-page-1', 'pdf-page-2', 'pdf-page-3', 'pdf-page-4'];
+
+async function captureResumePage(el) {
+  return await html2canvas(el, {
+    scale: 2,
+    useCORS: true,
+    allowTaint: false,
+    logging: false,
+    backgroundColor: '#ffffff',
+    width: 1122,
+    height: 793,
+    windowWidth: 1122,
+    windowHeight: 793
+  });
+}
+
+async function confirmDownloadPDF() {
+  const confirmBtn = document.getElementById('pdf-confirm-btn');
+  const originalHtml = confirmBtn.innerHTML;
+  const overlay = document.getElementById('pdf-loading-overlay');
+  const loadingText = document.getElementById('pdf-loading-text');
+
+  confirmBtn.disabled = true;
+  confirmBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i> Generating...`;
+  overlay.style.display = 'flex';
+
+  const failedParts = [];
+
+  try {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'landscape' });
+    const pageWidthMM = 297;
+    const pageHeightMM = 210;
+    let isFirst = true;
+
+    for (const pageId of PDF_PAGE_IDS) {
+      const el = document.getElementById(pageId);
+      if (!el) { console.warn('Resume page not found:', pageId); continue; }
+      loadingText.textContent = 'PREPARING PAGE ' + (PDF_PAGE_IDS.indexOf(pageId) + 1) + ' OF ' + PDF_PAGE_IDS.length;
+      await new Promise(r => setTimeout(r, 30));
+      try {
+        const canvas = await captureResumePage(el);
+        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+        if (!isFirst) pdf.addPage();
+        pdf.addImage(imgData, 'JPEG', 0, 0, pageWidthMM, pageHeightMM);
+        isFirst = false;
+      } catch (pageErr) {
+        console.error('Failed to capture ' + pageId + ':', pageErr);
+        failedParts.push(pageId + ' (' + pageErr.message + ')');
+      }
+    }
+
+    if (isFirst) {
+      throw new Error('All pages failed to capture: ' + failedParts.join('; '));
+    }
+
+    pdf.save('Lasma_Stefani_Social_Media_Specialist_Portfolio.pdf');
+    closePdfConfirm();
+
+    if (failedParts.length > 0) {
+      alert('PDF was created, but these pages were skipped:\n' + failedParts.join('\n'));
+    }
+  } catch (err) {
+    console.error('PDF Generation Error:', err);
+    alert('Failed to generate the PDF.\n\nError detail: ' + err.message + '\n\nOpen the browser Console (F12) for full details.');
+  } finally {
+    overlay.style.display = 'none';
+    confirmBtn.disabled = false;
+    confirmBtn.innerHTML = originalHtml;
+  }
+}
+</script>
+</body>
+</html>
